@@ -11,9 +11,10 @@ tasks:
       git config --global commit.gpgsign true &&
       git config --global tag.gpgsign true &&
       cd /workspace/jmeter-alpine
-  - name: Open terminal with correct TTY
-    command: export GPG_TTY=$(tty)
-    openMode: tab-after
+  # Doesn't work. Unless the new tab is started manually /dev/pts/* is owned by root 
+  # - name: Open terminal with correct TTY
+  #   command: export GPG_TTY=$(tty)
+  #   openMode: tab-after
 vscode:
   extensions:
     - hashicorp.hcl
