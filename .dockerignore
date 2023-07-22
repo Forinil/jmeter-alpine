@@ -1,0 +1,5 @@
+.git/
+.gitattributes
+docker-bake.hcl
+LICENSE
+README.md
