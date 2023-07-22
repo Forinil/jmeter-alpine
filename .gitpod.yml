@@ -3,8 +3,8 @@ tasks:
       [[ ! -z $GNUGPG  ]] &&
       cd ~ &&
       rm -rf .gnupg &&
-      echo $GNUGPG | base64 -d | tar --no-same-owner -xzvf -
-      git config --global user.signingkey 793731EFDA37E4BC
-      git config --global commit.gpgsign true
-      git config --global tag.gpgsign true
+      echo $GNUGPG | base64 -d | tar --no-same-owner -xzvf - &&
+      git config --global user.signingkey 793731EFDA37E4BC &&
+      git config --global commit.gpgsign true &&
+      git config --global tag.gpgsign true &&
       export GPG_TTY=$(tty)
