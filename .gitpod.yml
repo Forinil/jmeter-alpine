@@ -1,10 +1,18 @@
 tasks:
-  - before: >
+  - name: Setup commit and tag signing
+    before: >
       [[ ! -z $GNUGPG  ]] &&
       rm -rf ~/.gnupg &&
       cd / &&
       echo $GNUGPG | base64 -d | tar --no-same-owner -xzvf - &&
+      git config --global user.email "kbotor@gmail.com" &&
+      git config --global user.name "Konrad Botor" &&
       git config --global user.signingkey 793731EFDA37E4BC &&
       git config --global commit.gpgsign true &&
       git config --global tag.gpgsign true &&
-      export GPG_TTY=$(tty)
+      export GPG_TTY=$(tty) &&
+      cd /workspace/jmeter-alpine
+vscode:
+  extensions:
+    - hashicorp.hcl
+    - ms-azuretools.vscode-docker
