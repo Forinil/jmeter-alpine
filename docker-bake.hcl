@@ -19,3 +19,19 @@ target "local" {
     JMETER_VERSION = "${JMETER_VERSION}"
   }
 }
+
+target "docker-metadata-action" {}
+
+target "ci" {
+  inherits = ["docker-metadata-action"]
+  args = {
+    ALPINE_VERSION = "${ALPINE_VERSION}",
+    JMETER_VERSION = "${JMETER_VERSION}"
+  }
+  platforms = [
+    "linux/amd64",
+    "linux/arm/v6",
+    "linux/arm/v7",
+    "linux/arm64"
+  ]
+}
