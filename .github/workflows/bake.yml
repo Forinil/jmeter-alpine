@@ -38,7 +38,7 @@ jobs:
         id: jmeter-version
         run: |
           if [[ "${{ github.ref_type }}" == "branch" ]]; then
-            echo "JMETER_VERSION=5.6.2" >> "$GITHUB_ENV"
+            echo "JMETER_VERSION=5.6.3" >> "$GITHUB_ENV"
           elif [[ "${{ github.ref_type }}" == "tag" ]]; then
             echo "JMETER_VERSION=${{ github.ref_name }}" >> "$GITHUB_ENV"
           fi

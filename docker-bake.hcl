@@ -2,7 +2,7 @@ variable "ALPINE_VERSION" {
   default = "latest"
 }
 variable "JMETER_VERSION" {
-  default = "5.6.2"
+  default = "5.6.3"
 }
 variable "TAG" {
     default = "latest"
